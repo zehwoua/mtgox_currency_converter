@@ -1,0 +1,386 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+
+------------------------------------------------------------- */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND SIZE */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* line 13, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 22, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 25, ../sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 28, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 31, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 35, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 39, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 43, ../sass/_reset.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+
+/* line 48, ../sass/_reset.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 52, ../sass/_reset.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+
+/* line 57, ../sass/_reset.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/************************* sticky footer ********************************/
+/* line 63, ../sass/_reset.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 66, ../sass/_reset.scss */
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -32px;
+  /* the bottom margin is the negative value of the footer's height */
+}
+
+/* line 72, ../sass/_reset.scss */
+.footer, .push {
+  height: 32px;
+  /* .push must be the same height as .footer */
+}
+
+/* line 3, ../sass/main.scss */
+body {
+  background: #f2f2f2;
+  padding-top: 50px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* line 10, ../sass/main.scss */
+#converter {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 0 15px 30px;
+  background: white;
+  box-sizing: border-box;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 3px #aaaaaa;
+  -moz-box-shadow: 0 0 3px #aaaaaa;
+  box-shadow: 0 0 3px #aaaaaa;
+}
+/* line 19, ../sass/main.scss */
+#converter h1 {
+  margin: 0 -15px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 1px #666666;
+  background-color: #a6c7dc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a6c7dc), to(#86b3d3));
+  background-image: -webkit-linear-gradient(top, #a6c7dc, #86b3d3);
+  background-image: -moz-linear-gradient(top, #a6c7dc, #86b3d3);
+  background-image: -ms-linear-gradient(top, #a6c7dc, #86b3d3);
+  background-image: -o-linear-gradient(top, #a6c7dc, #86b3d3);
+  background-image: linear-gradient(top, #a6c7dc, #86b3d3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor);
+  border-bottom: 1px solid #cfcfcf;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-sizing: border-box;
+  padding: 0 15px;
+  -webkit-box-shadow: 0 0 2px #bababa;
+  -moz-box-shadow: 0 0 2px #bababa;
+  box-shadow: 0 0 2px #bababa;
+}
+/* line 33, ../sass/main.scss */
+#converter #content {
+  display: none;
+}
+/* line 36, ../sass/main.scss */
+#converter .first-load {
+  margin: 50px 0 30px 0;
+}
+
+/* line 41, ../sass/main.scss */
+table {
+  width: 100%;
+}
+/* line 43, ../sass/main.scss */
+table th {
+  font-weight: bold;
+  line-height: 35px;
+  text-align: left;
+}
+/* line 50, ../sass/main.scss */
+table#currency_update th {
+  text-align: right;
+  line-height: 35px;
+  min-width: 82px;
+  width: 82px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+}
+/* line 57, ../sass/main.scss */
+table#currency_update th.p {
+  padding-bottom: 10px;
+}
+/* line 60, ../sass/main.scss */
+table#currency_update th.last {
+  padding-bottom: 0;
+}
+/* line 66, ../sass/main.scss */
+table#currency_info {
+  margin-bottom: 15px;
+}
+/* line 68, ../sass/main.scss */
+table#currency_info th {
+  width: 25%;
+  border-bottom: 2px solid #ddd;
+}
+/* line 72, ../sass/main.scss */
+table#currency_info td {
+  padding-top: 15px;
+}
+
+/* line 78, ../sass/main.scss */
+.display_loader {
+  display: none;
+}
+/* line 80, ../sass/main.scss */
+.display_loader.show {
+  display: block;
+}
+
+/* line 85, ../sass/main.scss */
+select {
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  padding: 6px 0;
+  -webkit-appearance: menulist-button;
+  border-color: #ccc;
+  font-size: 14px;
+  color: #333;
+}
+
+/* line 96, ../sass/main.scss */
+.pull-right {
+  float: right !important;
+}
+
+/* line 99, ../sass/main.scss */
+.pull-left {
+  float: left !important;
+}
+
+/* line 102, ../sass/main.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 106, ../sass/main.scss */
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+/* line 110, ../sass/main.scss */
+.input-group .input-group-addon {
+  padding: 6px 13px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 127, ../sass/main.scss */
+.input-group input {
+  height: 34px;
+  margin: 0;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  display: table-cell;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 151, ../sass/main.scss */
+.btn-one {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.0s;
+}
+
+/* line 157, ../sass/main.scss */
+.btn-two {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.2s;
+}
+
+/* line 163, ../sass/main.scss */
+.btn-three {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dot {
+  /* line 170, ../sass/main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 171, ../sass/main.scss */
+  50% {
+    opacity: 0;
+  }
+
+  /* line 172, ../sass/main.scss */
+  100% {
+    opacity: 1;
+  }
+}

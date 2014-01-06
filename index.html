@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Title Goes Here</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/font-awesome.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css" />
+
+</head>
+<body>
+	<div id="converter">
+		<h1>
+			<span class="pull-right">Total Socket Messages: <span id="no_of_message">0</span></span>
+			MtGox Currency Converter
+		</h1>
+
+		<div id="content">
+			<table id="currency_info">
+				<tr>
+					<th>Last Price</th>
+					<th>High</th>
+					<th>Low</th>
+					<th>Volume</th>
+				</tr>
+				<tr class="display_info">
+					<td class="c_last"></td>
+					<td class="c_high"></td>
+					<td class="c_low"></td>
+					<td class="c_volume"></td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<p class="display_loader text-center">Updating<span class="btn-one">.</span><span class="btn-two">.</span><span class="btn-three">.</span>​</span></p>
+					</td>
+				</tr>
+			</table>
+
+			
+
+			<table id="currency_update">
+				<tr>
+					<th>Currency</th>
+					<td>
+						<select id="selectCurrency">
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<th class="p">Price/BTC</th>
+					<td id="currency_price"></td>
+				</tr>
+
+				<tr>
+					<th>Amount</th>
+					<td>
+						<div class="input-group">
+					        <span class="input-group-addon">BTC</span>
+					        <input type="text" class="form-control" id="amount_btc" value="1" />
+					    </div>
+					</td>
+				</tr>
+
+				<tr>
+					<th class="last">Total</th>
+					<td>
+						<div class="input-group">
+					        <span class="input-group-addon" id="currency-symbol">USD</span>
+					        <input type="text" class="form-control" id="amount_currency" />
+					    </div>
+					</td>
+				</tr>
+			</table>
+
+		</div><!--/content-->
+		<div class="first-load text-center">
+			<img src="assets/loader.gif" />
+		</div>
+	</div><!--/converter-->
+	
+	<script type="text/javascript" src="assets/javascripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="assets/javascripts/custom.js"></script>
+	<script type="text/javascript" src="https://websocket.mtgox.com/socket.js"></script>
+
+	
+</body>
+</html>
+
+
