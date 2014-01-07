@@ -1,11 +1,26 @@
 jQuery(document).ready(function(){
 
-	$.getJSON( "assets/javascripts/currency.json", function( data ) {
-        $.each(data, function(i, value) {
-            $('#selectCurrency').append($('<option>').text(i).attr({'value': i , 'data-symbol': value.symbol }) );
-        });
+	var currencies = [ 'USD'
+				    , 'AUD'
+				    , 'CAD'
+				    , 'CHF'
+				    , 'CNY'
+				    , 'DKK'
+				    , 'EUR'
+				    , 'GBP'
+				    , 'HKD'
+				    , 'JPY'
+				    , 'NZD'
+				    , 'PLN'
+				    , 'RUB'
+				    , 'SEK'
+				    , 'SGD'
+				    , 'THB' ]
+    $.each(currencies, function(i, value) {
+        $('#selectCurrency').append($('<option>').text(value).attr('value', value ) );
+    });
         
-	});
+	
 
 
 	$('#selectCurrency').change(change_currency);
